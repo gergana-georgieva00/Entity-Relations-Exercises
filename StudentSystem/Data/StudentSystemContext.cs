@@ -52,6 +52,11 @@ namespace P01_StudentSystem.Data
                 e.HasKey(h => h.HomeworkId);
                 e.Property(h => h.Content).IsUnicode(false);
             });
+
+            modelBuilder.Entity<StudentCourse>(e =>
+            {
+                e.HasKey(sc => new { sc.StudentId, sc.CourseId });
+            });
         }
     }
 }
