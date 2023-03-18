@@ -8,6 +8,9 @@ namespace P01_StudentSystem.Data.Models
 {
     public class Student
     {
+        // One student can have many Courses 
+        // One student can have many Homeworks 
+
         public int StudentId { get; set; }
         public string Name { get; set; }
         public string PhoneNumber { get; set; }
