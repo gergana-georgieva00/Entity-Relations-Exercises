@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace P01_StudentSystem.Data.Models
 {
-    public class Homework
+    public enum ContentType
     {
-        public int HomeworkId { get; set; }
-        public string Content { get; set; }
-        public ContentType ContentType { get; set; }
+        Application,
+        Pdf,
+        Zip
     }
 }
