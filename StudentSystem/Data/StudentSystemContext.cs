@@ -45,6 +45,8 @@ namespace P01_StudentSystem.Data
                 e.HasKey(r => r.ResourceId);
                 e.Property(r => r.Name).HasMaxLength(50).IsUnicode();
                 e.Property(r => r.Url).IsUnicode(false);
+
+                e.HasOne(r => r.CourseId).WithMany()
             });
 
             modelBuilder.Entity<Homework>(e =>
