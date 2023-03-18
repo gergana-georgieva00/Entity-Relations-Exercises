@@ -16,5 +16,7 @@ namespace P01_StudentSystem.Data.Models
         public string PhoneNumber { get; set; }
         public DateTime RegisteredOn { get; set; }
         public DateTime? BirthDay { get; set; }
+        public ICollection<Course> Courses { get; set; }
+        public ICollection<Homework> Homeworks { get; set; }
     }
 }
