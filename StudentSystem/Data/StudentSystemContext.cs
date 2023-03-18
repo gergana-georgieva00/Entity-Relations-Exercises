@@ -20,5 +20,15 @@ namespace P01_StudentSystem.Data
         public DbSet<Resource> Resources { get; set; }
         public DbSet<Homework> Homeworks { get; set; }
         public DbSet<StudentCourse> StudentsCourses { get; set; }
+
+        // Validation
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Student>(e =>
+            {
+                e.HasKey(e => e.StudentId);
+
+            });
+        }
     }
 }
