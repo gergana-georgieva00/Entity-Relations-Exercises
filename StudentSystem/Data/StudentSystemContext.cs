@@ -26,8 +26,10 @@ namespace P01_StudentSystem.Data
         {
             modelBuilder.Entity<Student>(e =>
             {
-                e.HasKey(e => e.StudentId);
-
+                e.HasKey(s => s.StudentId);
+                e.Property(s => s.Name).HasMaxLength(100);
+                e.Property(s => s.PhoneNumber).HasMaxLength(10).IsUnicode(false).IsRequired(false);
+                e.Property(s => s.BirthDay).IsRequired(false);
             });
         }
     }
