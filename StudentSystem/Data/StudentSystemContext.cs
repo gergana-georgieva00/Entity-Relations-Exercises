@@ -54,7 +54,8 @@ namespace P01_StudentSystem.Data
                 e.HasKey(h => h.HomeworkId);
                 e.Property(h => h.Content).IsUnicode(false);
 
-                e.HasOne(h => h.Cou).WithMany()
+                e.HasOne(h => h.Course).WithMany(c => c.Homeworks).HasForeignKey(h => h.CourseId);
+                e.HasOne(h => h.Student).WithMany(h => h.Homeworks).HasForeignKey(h => h.StudentId);
             });
 
             modelBuilder.Entity<StudentCourse>(e =>
