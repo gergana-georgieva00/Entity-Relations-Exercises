@@ -53,6 +53,8 @@ namespace P01_StudentSystem.Data
             {
                 e.HasKey(h => h.HomeworkId);
                 e.Property(h => h.Content).IsUnicode(false);
+
+                e.HasOne(h => h.Cou).WithMany()
             });
 
             modelBuilder.Entity<StudentCourse>(e =>
