@@ -61,6 +61,9 @@ namespace P01_StudentSystem.Data
             modelBuilder.Entity<StudentCourse>(e =>
             {
                 e.HasKey(sc => new { sc.StudentId, sc.CourseId });
+
+                e.HasOne(sc => sc.Student).WithMany(s => s.StudentCourses).HasForeignKey(sc => sc.StudentId);
+                e.HasOne(sc => sc.Course).WithMany(c => c.StudentsCourses).HasForeignKey(sc => sc.CourseId);
             });
         }
     }
